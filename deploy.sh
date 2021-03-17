@@ -2,6 +2,10 @@
 
 set -e
 
+git add . 
+git commit -m "deploy"
+git push -u
+
 yarn build
 cd public
 git init 
