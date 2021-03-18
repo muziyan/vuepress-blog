@@ -2,9 +2,12 @@
 
 set -e
 
+
+if [ -n "$(git status -s)" ];then
 git add . 
 git commit -m "deploy"
 git push -u
+fi
 
 yarn build
 cd public
