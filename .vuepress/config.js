@@ -1,6 +1,7 @@
 module.exports = {
   title: "季小七的旅途！",
   description: '一个记录学习笔记和杂文的站点',
+  base:"/",
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -89,6 +90,9 @@ module.exports = {
     // }
   },
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+      extendMarkdown: md => {
+        md.use(require("markdown-it-disable-url-encode"));
+      }
   }
 }  
